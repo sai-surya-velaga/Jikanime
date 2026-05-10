@@ -1,46 +1,40 @@
 # Jikanime
 
-Jikanime is an Android application that allows users to browse and explore anime details, including trailers, ratings, and descriptions. The app fetches data from the MyAnimeList API using Retrofit and presents it in an intuitive user interface built with traditional Android Views and Activities.
+A native Android application designed for anime discovery, built with a focus on modern architectural patterns and robust data handling. Jikanime interfaces with the MyAnimeList API (via Jikan) to provide a performant, scalable experience for browsing anime metadata and media.
 
-## Features
-- View a list of top-rated anime.
-- Fetch and display detailed information about selected anime.
-- Play anime trailers directly within the app.
-- Modern UI using XML-based layouts and Activities.
-- Dependency injection using Hilt.
-- Kotlin Coroutines for asynchronous operations.
-- MVVM architecture pattern.
+## 🏗️ Architecture & Technical Stack
 
-## Tech Stack
-- **Language:** Kotlin
-- **UI Framework:** XML-based Views & Activities
-- **Networking:** Retrofit + OkHttp
-- **Dependency Injection:** Hilt
-- **Architecture:** MVVM (Model-View-ViewModel)
-- **State Management:** StateFlow
+The project follows **Clean Architecture** principles and the **MVVM** pattern to ensure a separation of concerns and testability.
 
-## API Used
-The app utilizes the [Jikan API](https://jikan.moe/) to fetch anime data.
+* **Language:** Kotlin
+* **UI Layer:** XML-based Views & Activities with a transition plan toward Jetpack Compose.
+* **Asynchronous Logic:** Kotlin Coroutines & StateFlow for reactive, non-blocking data streams.
+* **Dependency Injection:** Hilt (Dagger) for modular, maintainable code.
+* **Networking:** Retrofit + OkHttp with custom interceptors for API reliability.
+* **Media:** YouTube WebView integration for seamless trailer playback.
 
-## Installation
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/sai-surya-velaga/Jikanime.git
-   ```
-2. Open the project in Android Studio.
-3. Build and run the project on an emulator or a real device.
+## 🚀 Key Engineering Features
 
-## How It Works
-1. The app fetches a list of top anime using `AnimeRepositoryImpl`.
-2. When an anime is selected, details are fetched via the `getAnimeDetails(animeId)` function.
-3. The `AnimeDetailsViewModel` processes the data and updates the UI.
-4. The trailer is embedded via YouTube WebView.
+* **Reactive State Management:** Leverages `StateFlow` to manage UI states, ensuring consistency across configuration changes.
+* **Modular Networking:** Centralized API handling using Retrofit, optimized for efficient JSON parsing and error handling.
+* **Dependency Injection:** Full Hilt implementation to decouple components and simplify unit testing.
+* **Performance Optimization:** Efficient handling of image loading and network requests to minimize memory footprint.
 
-## Future To-Do's
-- Implement a search feature with debounced API calls for efficiency.
-- Introduce dark mode with dynamic theming.
-- Enhance UI with Material 3 components while keeping performance optimized.
-- Improve offline support using WorkManager and local caching.
-- Optimize API requests with pagination and efficient data handling.
-- Integrate Room Database for caching and local data persistence.
-- Implement Jetpack Compose UI for improved maintainability.
+## 🛠️ Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/sai-surya-velaga/Jikanime.git](https://github.com/sai-surya-velaga/Jikanime.git)
+    ```
+2.  **Open in Android Studio:** Ensure you are using the latest stable version.
+3.  **Sync & Build:** The project uses Kotlin DSL for Gradle. Sync the project to download dependencies.
+
+## 📈 Roadmap
+
+* [ ] **Jetpack Compose Migration:** Modernizing the UI layer for better maintainability.
+* [ ] **Local Persistence:** Implementing Room Database for offline-first capabilities.
+* [ ] **Advanced Search:** Adding debounced search queries and complex filtering logic.
+* [ ] **Pagination:** Implementing the Paging 3 library to handle large datasets efficiently.
+
+---
+**[Sai Surya Velaga](https://github.com/sai-surya-velaga)** | Software Engineer III @ Google
